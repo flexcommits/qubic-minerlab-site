@@ -1,0 +1,33 @@
+.profile-style {
+  .MuiCard-root {
+    background-color: transparent !important;
+    background-image: none;
+
+    .MuiCardContent-root {
+      background-color: inherit;
+      background-image: none;
+    }
+  }
+}
+
+.primary-input {
+  border: 1px solid #86cee4;
+  font-family: "Poppins", sans-serif !important;
+
+  input {
+    font-family: "Poppins", sans-serif !important;
+    border: 1px solid #86cee4;
+    color: lightgray;
+    border-radius: 5px;
+  }
+}
+
+.cpu-threads-input {
+  border-color: #86cee4 !important;
+  height: 38px !important;
+  input,
+  .MuiInputBase-root {
+    height: inherit !important;
+    border-color: #86cee4 !important;
+  }
+}

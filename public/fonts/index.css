@@ -1,0 +1,24 @@
+
+@font-face {
+    font-family: 'Orbitron';
+    src: url('./Orbitron/Orbitron-Regular.ttf') format(' q');
+    font-weight: 400; /* Regular */
+}
+
+@font-face {
+    font-family: 'Orbitron';
+    src: url('Orbitron-Medium.woff2') format('woff2');
+    font-weight: 500; /* Medium */
+}
+
+@font-face {
+    font-family: 'Orbitron';
+    src: url('Orbitron-Bold.woff2') format('woff2');
+    font-weight: 700; /* Bold */
+}
+
+@font-face {
+    font-family: 'Orbitron';
+    src: url('Orbitron-Black.woff2') format('woff2');
+    font-weight: 900; /* Black */
+}

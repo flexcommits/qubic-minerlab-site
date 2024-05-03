@@ -1,0 +1,16 @@
+version: '3'
+services:
+  staging:
+    # container_name: ps-frontend-${env}1
+    image: minerlab.azurecr.io/qubic-minerlab:${tag}
+    ports:
+      - 6100:3000/
+  prod:
+    # container_name: ps-frontend-${env}
+    image:  minerlab.azurecr.io/qubic-minerlab:${tag}
+    ports:
+      - 7000:3000
+    # build: ./
+    # tty: true
+    # volumes:
+      # - ./data:/app/data

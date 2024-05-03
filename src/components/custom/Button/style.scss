@@ -1,0 +1,45 @@
+.primary-btn {
+  background: radial-gradient(120.35% 144.92% at 50.19% 0%,
+      #265b67 0%,
+      #0b0913 48.2%);
+  width: inherit;
+  height: inherit;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22.16px;
+  letter-spacing: 0.04em;
+  text-align: center;
+  text-transform: capitalize;
+  color: white;
+  font-family: inherit;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(38, 91, 103, 0.5); // Change this to the color you want for the focus outline
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  &:hover {
+    background: radial-gradient(
+      120.35% 144.92% at 50.19% 0%,
+      #0b0913 0%,
+      #265b67 48.2%
+    );
+    border-radius: 5px;
+  }
+
+  &.disabled {
+    background: #A9A9A9; // Change this to the color you want for the disabled button
+    cursor: not-allowed;
+    opacity: 0.6; // You can adjust this value to make the button look more or less disabled
+
+    &:hover {
+      background: #A9A9A9; // The hover color should be the same as the normal color when the button is disabled
+    }
+  }
+
+}

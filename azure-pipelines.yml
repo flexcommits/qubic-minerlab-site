@@ -1,0 +1,71 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  name: home
+
+stages: 
+- stage: build
+  displayName: Build Stage
+  jobs:
+  - job: build
+    displayName: Build Qubic
+    steps:
+    # - task: Bash@3
+    #   inputs:
+    #     targetType: 'inline'
+    #     script: |
+    #             docker build -t minerlab-site:$(Build.BuildId) .
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'minerlab'
+        repository: 'qubic-minerlab'
+        command: 'buildAndPush'
+        Dockerfile: '**/Dockerfile'
+        
+
+- stage: staging
+  dependsOn: build
+  displayName: staging
+  pool: aws-ps
+  jobs:
+  - job: deploy
+    displayName: deploy staging
+  - deployment:
+    environment:
+      name: "staging"
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - task: Bash@3
+            inputs:
+              targetType: 'inline'
+              script: |
+                  env=staging tag=$(Build.BuildId) docker compose -p minerlab-site up -d --force-recreate staging
+
+- stage: prod
+  pool: aws-ps
+  dependsOn: staging
+  displayName: Deploying to Prod
+  jobs:
+    - job:
+      displayName: 
+    - deployment:
+      environment:
+        name: "Prod"
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+            - task: Bash@3
+              displayName: Deploy to Production
+              inputs:
+                targetType: 'inline'
+                script: |
+                        env=prod tag=$(Build.BuildId) docker compose -p minerlab-site up -d --force-recreate prod

@@ -1,0 +1,26 @@
+.ql-overview-page {
+    .MuiCard-root {
+        background-image: none !important;
+    }
+}
+
+.overview-ol-list {
+    list-style-type: decimal;
+    color: #86cee4;
+    font-weight: 600;
+
+    li {
+        margin-bottom: 20px;
+        span {
+           
+            color: white;
+        }
+
+        &::marker {
+            color: #86cee4;
+            font-size: 22px;
+            font-weight: 600;
+        }
+        
+    }
+}

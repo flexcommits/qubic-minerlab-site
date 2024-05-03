@@ -1,0 +1,52 @@
+.root {
+  padding: calc(var(--mantine-spacing-xl) * 1.5);
+}
+
+.value {
+  /* font-size: rem(30px);
+  font-weight: 700;
+  line-height: 1; */
+  align-items: center;
+  text-align: center;
+}
+
+.diff {
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  color: light-dark(var(--mantine-color-gray-4), var(--mantine-color-dark-3));
+}
+
+.title {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.dashboardCards {
+  background: linear-gradient(180deg, #86cee4 0%, #265b67 100%);
+  color: #1c2028;
+  height: 159px;
+  position: relative;
+}
+
+.infoCard {
+  background: linear-gradient(
+    to top,
+    #1c1f27,
+    rgba(255, 255, 255, 0.1)
+  ) !important;
+  border-top-left-radius: 20px !important;
+  border-top-right-radius: 20px !important;
+  height: 260px;
+  padding: 18px;
+}
+
+.absoluteIcon {
+  position: absolute;
+  /* top: 0;
+  right: 0; */
+  opacity: 0.25;
+}
